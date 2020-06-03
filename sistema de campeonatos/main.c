@@ -8,7 +8,7 @@ int main()
         char nome[51], sobrenome[51], nacionalidade[21];
     }Tecnico;
 
-    typedef struct tipo_time {
+    typedef struct tipo_times {
         char nome[31];
         int qtd_vitorias, qtd_empates, qtd_derrotas;
         Tecnico tecnico;
@@ -26,7 +26,7 @@ int main()
     char nome[51];
 
     for (i=0; i<5; i++){
-        strcpy(time[i].nome, "");
+        strcpy(campeonato->times[i].nome, "");
     }
 
     do{
@@ -41,23 +41,34 @@ int main()
         printf("0 - Sair:\n");
         printf("OPCAO:\n");
         scanf("%i", &op);
+        setbuf(stdin, NULL);
 
         switch(op){
             case 1:
-                printf("#####CADASTRAR#####\n\n");
+                system("cls");
+                printf("#####CADASTRAR TIME#####\n\n");
                 for(i=0; i<5; i++);{
-                    if(strcmp(campeonato.time[i].nome, "")==0){
+                    if(strcmp(campeonato->times[i].nome, "")==0){
                        break;
                     }
                 }
 
                 printf("NOME:\n");
-                fgets(campeonato.time[i].nome, 51, stdin);
-                printf("TECNICO:\n");
-                fgets(campeonato.time[i].tecnico.nome, 51, stdin);
-                campeomato.time[i].vitorias = 0;
-                campeomato.time[i].empates = 0;
-                campeomato.time[i].derrotas = 0;
+                fgets(campeonato->times[i].nome, 51, stdin);
+
+
+                printf("\n#####CADASTRAR TECNICO#####\n");
+
+                printf("\nTECNICO:\n");
+                fgets(campeonato->times[i].tecnico.nome, 51, stdin);
+                printf("\nSOBRENOME:\n");
+                fgets(campeonato->times[i].tecnico.sobrenome, 51, stdin);
+                printf("\nNACIONALIDADE:\n");
+                fgets(campeonato->times[i].tecnico.nacionalidade, 21, stdin);
+                campeonato->times[i].qtd_vitorias=0;
+                campeonato->times[i].qtd_empates=0;
+                campeonato->times[i].qtd_derrotas=0;
+                system("cls");
 
                 break;
 
@@ -78,10 +89,6 @@ int main()
 
             case 7:
                 break;
-
-            default;
-
-
 
         }
 
