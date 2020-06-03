@@ -44,6 +44,21 @@ int main()
 
         switch(op){
             case 1:
+                printf("#####CADASTRAR#####\n\n");
+                for(i=0; i<5; i++);{
+                    if(strcmp(campeonato.time[i].nome, "")==0){
+                       break;
+                    }
+                }
+
+                printf("NOME:\n");
+                fgets(campeonato.time[i].nome, 51, stdin);
+                printf("TECNICO:\n");
+                fgets(campeonato.time[i].tecnico.nome, 51, stdin);
+                campeomato.time[i].vitorias = 0;
+                campeomato.time[i].empates = 0;
+                campeomato.time[i].derrotas = 0;
+
                 break;
 
             case 2:
