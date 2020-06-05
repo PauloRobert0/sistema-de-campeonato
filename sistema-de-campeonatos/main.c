@@ -20,13 +20,14 @@ int main()
     }Campeonato;
 
 
+
     int op, i;
     Campeonato campeonato[5];
 
     char nome[51];
 
     for (i=0; i<5; i++){
-        strcpy(campeonato->times[i].nome, "");
+        strcpy(campeonato.times[i].nome, "");
     }
 
     do{
